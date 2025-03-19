@@ -79,7 +79,24 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    let grid = document.getElementById("grid"); // Get the table element
+
+    if (!grid || grid.rows.length === 0) {
+        console.warn("No columns to remove.");
+        return;
+    }
+
+    let numCols = grid.rows[0].cells.length; // Get the number of columns in the first row
+
+    if (numCols === 0) {
+        console.warn("No columns exist in the grid.");
+        return;
+    }
+
+    // Remove the last cell from each row
+    for (let i = 0; i < grid.rows.length; i++) {
+        grid.rows[i].deleteCell(numCols - 1);
+    }
 }
 
 // Set global variable for selected color
