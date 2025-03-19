@@ -32,7 +32,37 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+
+    if (!grid) {
+        console.error("Grid table not found!");
+        return;
+    }
+
+    let numRows = grid.rows.length;
+
+    if (numRows === 0) {
+        // If no rows exist, create a new row with one cell
+        let newRow = grid.insertRow();
+        let newCell = newRow.insertCell();
+        newCell.style.backgroundColor = "white"; // Default color
+        newCell.onclick = function() {
+            if (colorSelected) {
+                this.style.backgroundColor = colorSelected;
+            }
+        };
+    } else {
+        // Add a new cell to each existing row
+        for (let i = 0; i < numRows; i++) {
+            let newCell = grid.rows[i].insertCell();
+            newCell.style.backgroundColor = "white"; // Default color
+            newCell.onclick = function() {
+                if (colorSelected) {
+                    this.style.backgroundColor = colorSelected;
+                }
+            };
+        }
+    }
 }
 
 // Remove a row
