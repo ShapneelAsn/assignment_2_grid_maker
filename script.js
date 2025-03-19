@@ -107,7 +107,21 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+
+    if (!grid) {
+        console.error("Grid table not found!");
+        return;
+    }
+
+    for (let i = 0; i < grid.rows.length; i++) {
+        for (let j = 0; j < grid.rows[i].cells.length; j++) {
+            let cell = grid.rows[i].cells[j];
+            if (cell.style.backgroundColor === "" || cell.style.backgroundColor === "white") {
+                cell.style.backgroundColor = colorSelected; 
+            }
+        }
+    }
 }
 
 // Fill all cells
