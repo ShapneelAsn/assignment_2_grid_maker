@@ -67,7 +67,14 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    let grid = document.getElementById("grid"); //Get the table element
+
+    if (!grid || grid.rows.length === 0) {
+        console.warn("No rows to remove.");
+        return;
+    }
+
+    grid.deleteRow(grid.rows.length - 1); //Remove the last row
 }
 
 // Remove a column
