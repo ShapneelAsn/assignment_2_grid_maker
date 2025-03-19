@@ -142,5 +142,16 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let grid = document.getElementById("grid");
+
+    if (!grid) {
+        console.error("Grid table not found!");
+        return;
+    }
+
+    for (let i = 0; i < grid.rows.length; i++) {
+        for (let j = 0; j < grid.rows[i].cells.length; j++) {
+            grid.rows[i].cells[j].style.backgroundColor = "white"; // Reset to default color
+        }
+    }
 }
