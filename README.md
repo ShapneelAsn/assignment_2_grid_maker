@@ -1,3 +1,9 @@
+# Group Members: Shapneel Ahsan
+
+# Github pages: https://shapneelasn.github.io/assignment_2_grid_maker/
+
+
+
 # grid-maker-starter-code
 This repository is the starter code for Assignment 2 - Grid Maker.
 
